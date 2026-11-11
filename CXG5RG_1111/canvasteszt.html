@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Rajzolás a vászonra - NEPTUNKOD</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        /* A minta szerinti vászon szegélye */
+        #BLCanvas {
+            border: 1px solid #999;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Címsor a minta szerint -->
+<h2>Rajzolás a vászonra - NEPTUNKOD</h2>
+
+<!-- 700x350 méretű vászon, BLCanvas azonosítóval -->
+<canvas id="BLCanvas" width="700" height="350"></canvas>
+
+<script>
+    // Két kötelező változó deklarálása a feladatleírás alapján:
+    var xy = document.getElementById("BLCanvas"); // xy – lekérdezés az oldalról
+    var blx = xy.getContext("2d");                 // blx – a vászon 2d rajzolunk
+
+    // -------------------------------------------------------------
+    // 1. SZÖVEG: "Mérnökinformatika 2026"
+    // -------------------------------------------------------------
+    blx.font = "20px Arial";
+    blx.fillStyle = "#f59e0b"; // Sárgás-narancssárga szín
+    blx.textAlign = "center";
+    blx.fillText("Mérnökinformatika 2026", 350, 40);
+
+    // -------------------------------------------------------------
+    // 2. SZÍNES TÉGLALAP SUGÁRIRÁNYÚ SZÍNKÁTMENETTEL (Bal felső elem)
+    // -------------------------------------------------------------
+    // createRadialGradient(x0, y0, r0, x1, y1, r1)
+    var grad = blx.createRadialGradient(160, 100, 10, 160, 100, 75);
+    grad.addColorStop(0, "#f59e0b");    // Belső sárgás mag
+    grad.addColorStop(0.3, "#8b5cf6");  // Lila átmenet
+    grad.addColorStop(0.7, "#10b981");  // Zöld külső
+    grad.addColorStop(1, "#22c55e");
+
+    blx.fillStyle = grad;
+    blx.fillRect(100, 50, 150, 80);
+
+    // -------------------------------------------------------------
+    // 3. KÉK KÖRVONALAS TÉGLALAP (Bal alsó elem)
+    // -------------------------------------------------------------
+    blx.strokeStyle = "blue";
+    blx.lineWidth = 4;
+    blx.strokeRect(85, 175, 180, 85);
+
+    // -------------------------------------------------------------
+    // 4. >>> ITT A SÁRGA CUCC <<< : Körszelet / Pacman alakzat kék körvonallal
+    // -------------------------------------------------------------
+    blx.beginPath();
+    // arc(x, y, sugár, kezdőszög, zárószög)
+    // 275 foktól (kb. 1.52 * PI) 65 fokig (kb. 0.36 * PI) tartó ív a jobb oldali nyitáshoz
+    blx.arc(500, 120, 55, 1.52 * Math.PI, 0.36 * Math.PI, false);
+    blx.closePath(); // Visszahúzza az egyenes vonalat a szelet zárásához
+
+    blx.fillStyle = "yellow"; // Sárga kitöltés
+    blx.fill();
+    blx.strokeStyle = "blue"; // Kék körvonal
+    blx.lineWidth = 2;
+    blx.stroke();
+
+    // -------------------------------------------------------------
+    // 5. >>> ITT A KÉP ELHELYEZÉSE <<< : iit.jpg betöltése a jobb alsó részre
+    // -------------------------------------------------------------
+    var img = new Image();
+    img.src = "iit.jpg";
+    img.onload = function() {
+        // drawImage(kép, x, y, szélesség, magasság)
+        // Az a.) feladathoz a teljes kép kirajzolása a minta szerinti pozícióba:
+        blx.drawImage(img, 520, 190, 150, 100);
+
+        /*
+           MEGJEGYZÉS a b.) feladathoz (neptunkod_canvas1.html mentéshez):
+           Ha csak a bejárati ajtót kell kivágni a jobb alsó sarokba,
+           akkor a fenti sor helyett a 9 paraméteres formát kell használni:
+           blx.drawImage(img, sx, sy, sWidth, sHeight, 520, 190, 150, 100);
+        */
+    };
+</script>
+</body>
+</html>

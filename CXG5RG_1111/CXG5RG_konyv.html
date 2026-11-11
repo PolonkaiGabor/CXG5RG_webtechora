@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON megvalósítása – JavaScript</title>
+</head>
+<body>
+<h1>Könyvek listája</h1>
+<ul id="konyv-lista"></ul>
+
+<script>
+    const listaElem = document.getElementById("konyv-lista");
+
+    fetch("CXG5RG_konyv.json")
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Hiba történt a fájl betöltésekor");
+            }
+            return response.json();
+        })
+        .then(data => {
+            data.konyvek.konyv.forEach(konyv => {
+                const li = document.createElement("li");
+                li.innerHTML = `<strong>Szerző:</strong> ${konyv.iro} <strong>cim:</strong> ${konyv.cim} <strong>Kiadás éve:</strong> (${konyv.kiadas})`;
+                listaElem.appendChild(li);
+            });
+        })
+        .catch(error => console.error("Hiba:", error));
+</script>
+</body>
+</html>

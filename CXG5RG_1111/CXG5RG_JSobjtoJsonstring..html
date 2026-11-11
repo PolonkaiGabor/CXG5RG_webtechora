@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>JSON fájl készítése - JavaScript-ben</title>
+</head>
+<body>
+
+<h3>JSON fájl készítése - JavaScript-ben</h3>
+<strong>JSON:</strong>
+<p id="neptunkod"></p>
+<button onclick="generalas()">JSON generálás</button>
+
+<script>
+    function generalas() {
+        // JavaScript objektum (tömb) definiálása a minta kulcsaival ("Név", "kiterjesztes")
+        const jsObj = [
+            { "Név": "HTML5", "kiterjesztes": ".html" },
+            { "Név": "CSS3", "kiterjesztes": ".css" },
+            { "Név": "JavaScript", "kiterjesztes": ".js" }
+        ];
+
+        // Konvertálás JSON formátumú szöveggé
+        const jsonString = JSON.stringify(jsObj);
+
+        // Kiírás a HTML elembe
+        document.getElementById("neptunkod").innerHTML = jsonString;
+    }
+</script>
+</body>
+</html>
