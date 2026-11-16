@@ -1,74 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-    <meta charset="UTF-8">
-    <title>HTML5 Canvas Demo</title>
-<style>
-    body {
-    background-color: #f0f0f0;
-    text-align: center;
-    font-family: Arial, sans-serif;
-}
-    canvas {
-    border: 2px solid #333;
-}
-</style>
-</head>
-<body>
- <footer>
-     canvasrenderingContext2d drawimage
- </footer>
-<h1>HTML5 Canvas Example</h1>
-<canvas id="BLCanvas" width="700" height="350"></canvas>
+        <meta charset="UTF-8">
+        <title>Rajzolás a vászonra - CXG5RG</title>
+    </head>
+    <body>
+        <h2>Rajzolás a vászonra - CXG5RG</h2>
+        <canvas id="BLCanvas" width="700" height="350"></canvas>
+        <hr>
 
-<script>
-    // Get the canvas element and its drawing context
-    const xy = document.getElementById('BLCanvas');
-    const blx = xy.getContext('2d');
+        <p><b>Források:</b></p>
+        <p><a href="https://www.w3schools.com/html/html5_canvas.asp">https://www.w3schools.com/html/html5_canvas.asp</a></p>
+        <p><a href="https://www.w3schools.com/tags/ref_canvas.asp">https://www.w3schools.com/tags/ref_canvas.asp</a></p>
+        <p><a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawImage">https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawImage</a></p>
 
-    blx.font = "30px Arial";
-    blx.fillText("Hello World", 10, 50);
+        <script>
+            const xy = document.getElementById('BLCanvas');
+            const blx = xy.getContext('2d');
 
-    blx.font = '16px Arial';
-    blx.fillStyle = '#000000';
-    blx.fillText("Rajzolás a vászonra", 400, 35);
-
-    //alcim
-    blx.font = '14px Arial';
-    blx.fillStyle = '#ff8c00';
-    blx.fillText("Informatika", 450, 60);
-
-    //radialis
-    var radGrd = blx.createRadialGradient(110,105,10,140,120,95)
-    radGrd.addColorStop(0, "yellow");
-    radGrd.addColorStop(0.2, "orange");
-    radGrd.addColorStop(0.45, "#6a00ff");
-    radGrd.addColorStop(0.75, "#0033aa");
-    radGrd.addColorStop(1, "#00ff00");
+            blx.font = "30px Arial";
+            blx.fillStyle = "orange";
+            blx.fillText("Mérnökinformatika 2026", 200, 40);
 
 
+            //radialis
+            var radGrd = blx.createRadialGradient(180, 110, 10, 180, 110, 80)
+            radGrd.addColorStop(0, "yellow");
+            radGrd.addColorStop(0.2, "orange");
+            radGrd.addColorStop(0.45, "#6a00ff");
+            radGrd.addColorStop(0.75, "#0033aa");
+            radGrd.addColorStop(1, "#00ff00");
+            blx.fillStyle = radGrd;
+            blx.fillRect(100, 60, 200, 110);
 
-    blx.fillStyle = radGrd;
-    blx.fillRect(40, 70, 200, 100);
+            blx.strokeStyle = "blue";
+            blx.lineWidth = 3;
+            blx.strokeRect(80, 200, 240, 130);
 
-    blx.strokeStyle = "blue";
-    blx.lineWidth = 3;
-    blx.strokeRect(90,185,180,95);
+            blx.beginPath();
+            blx.arc(560,130,70,0.4 * Math.PI, 1.4*Math.PI, false);
+            blx.fillStyle = "yellow";
+            blx.fill();
+            blx.lineWidth = 2;
+            blx.strokeStyle = "black"
+            blx.stroke()
 
-    blx.beginPath();
-    blx.arc(560,160,45,-0.5 * Math.PI, 0.5*Math.PI, false);
-    blx.closePath();
-    blx.fillStyle = "yellow";
-    blx.fill();
-    blx.lineWidth = 2;
-    blx.strokeStyle = "black"
-    blx.stroke()
-
-    const img = new Image();
-    img.src = './kepek/iit.jpg';
-    img.onload = () => {
-        blx.drawImage(img, 500, 230, );
-    }
-</script>
-</body>
+            const img = new Image();
+            img.src = './iit.jpg';
+            img.onload = () => {
+                blx.drawImage(img, 500, 220, 195, 125);
+            }
+        </script>
+    </body>
 </html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Rajzolás a vászonra - CXG5RG</title>
+    </head>
+    <body>
+        <h2>Rajzolás a vászonra - CXG5RG</h2>
+        <canvas id="BLCanvas" width="700" height="350"></canvas>
+        <hr>
+
+        <p><b>Források:</b></p>
+        <p><a href="https://www.w3schools.com/html/html5_canvas.asp">https://www.w3schools.com/html/html5_canvas.asp</a></p>
+        <p><a href="https://www.w3schools.com/tags/ref_canvas.asp">https://www.w3schools.com/tags/ref_canvas.asp</a></p>
+        <p><a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawImage">https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawImage</a></p>
+
+        <script>
+            const xy = document.getElementById('BLCanvas');
+            const blx = xy.getContext('2d');
+
+            blx.font = "30px Arial";
+            blx.fillStyle = "orange";
+            blx.fillText("Mérnökinformatika 2026", 200, 40);
+
+
+            //radialis
+            var radGrd = blx.createRadialGradient(180, 110, 10, 180, 110, 80)
+            radGrd.addColorStop(0, "yellow");
+            radGrd.addColorStop(0.2, "orange");
+            radGrd.addColorStop(0.45, "#6a00ff");
+            radGrd.addColorStop(0.75, "#0033aa");
+            radGrd.addColorStop(1, "#00ff00");
+            blx.fillStyle = radGrd;
+            blx.fillRect(100, 60, 200, 110);
+
+            blx.strokeStyle = "blue";
+            blx.lineWidth = 3;
+            blx.strokeRect(80, 200, 240, 130);
+
+            blx.beginPath();
+            blx.arc(560,130,70,0.4 * Math.PI, 1.4*Math.PI, false);
+            blx.fillStyle = "yellow";
+            blx.fill();
+            blx.lineWidth = 2;
+            blx.strokeStyle = "black"
+            blx.stroke()
+
+            const img = new Image();
+            img.src = './iit.jpg';
+            img.onload = () => {
+                var sx = img.width * 0.55;
+                var sy = img.height * 0.53;
+                var sw = img.width * 0.15;
+                var sh = img.height * 0.14;
+                blx.drawImage(img, sx, sy, sw, sh, 500, 220, 195, 125);
+            }
+        </script>
+    </body>
+</html>
