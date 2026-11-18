@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8">
+    <title>CXG5RG Órarend</title>
+  </head>
+  <body>
+    <h2>CXG5RG Órarend 2026</h2>
+    <button id="betoltGomb">Órarend betöltése</button>
+    <div id="tartalom"></div>
+
+    <script>
+      document.getElementById("betoltGomb").addEventListener("click", function () {
+        fetch("orarendCXG5RG.json")
+                .then(response => response.json())
+                .then(data => {
+                  const orak = data.CXG5RG_orarend.ora;
+                  let html = "";
+
+                  for (let i = 0; i < orak.length; i++) {
+                    html += "<p style='color: blue;'>Tárgy: " + orak[i].targy + "</p>";
+                    html += "<p>Időpont: " + orak[i].idopont.nap + " " + orak[i].idopont.tol + ":00 - " + orak[i].idopont.ig + ":00</p>";
+                    html += "<p>Helyszín: " + orak[i].helyszin + "</p>";
+                    html += "<p>Oktato: " + orak[i].oktato + "</p>";
+                    html += "<p>Szak: " + orak[i].szak + "</p>";
+                    html += "<hr>";
+                  }
+
+                  document.getElementById("tartalom").innerHTML = html;
+                })
+                .catch(error => {
+                  document.getElementById("tartalom").innerHTML = "<p>Hiba a fájl beolvasásakor.</p>";
+                });
+      });
+    </script>
+  </body>
+</html>

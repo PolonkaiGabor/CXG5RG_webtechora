@@ -1,0 +1,149 @@
+{
+  "CXG5RG_orarend": {
+    "ora": [
+      {
+        "targy": "Web technológiák 1. (Elmélet)",
+        "idopont": {
+          "nap": "hétfő",
+          "tol": 10,
+          "ig": 12
+        },
+        "helyszin": "V. előadó",
+        "oktato": "Dr. Agárdi Anita",
+        "szak": "Programtervező informatikus BSc"
+      },
+      {
+        "targy": "Lineáris algebra numerikus módszerei (Elmélet)",
+        "idopont": {
+          "nap": "hétfő",
+          "tol": 12,
+          "ig": 14
+        },
+        "helyszin": "XXX. ea.",
+        "oktato": "dr. Karácsony Zsolt",
+        "szak": "Programtervező informatikus BSc"
+      },
+      {
+        "targy": "Programtervezési ismeretek (Elmélet)",
+        "idopont": {
+          "nap": "hétfő",
+          "tol": 12,
+          "ig": 14
+        },
+        "helyszin": "XXXIII. ea.",
+        "oktato": "Piller Imre",
+        "szak": "Programtervező informatikus BSc"
+      },
+      {
+        "targy": "Speciális szoftverek (Gyakorlat)",
+        "idopont": {
+          "nap": "kedd",
+          "tol": 10,
+          "ig": 14
+        },
+        "helyszin": "A/1. 207.",
+        "oktato": "Dr. Herendi Tamás",
+        "szak": "Programtervező informatikus BSc"
+      },
+      {
+        "targy": "Algoritmusok és vizsgálatuk (Elmélet)",
+        "idopont": {
+          "nap": "kedd",
+          "tol": 14,
+          "ig": 16
+        },
+        "helyszin": "XXX. ea.",
+        "oktato": "Dr. Házy Attila",
+        "szak": "Programtervező informatikus BSc"
+      },
+      {
+        "targy": "Lineáris algebra numerikus módszerei (Gyakorlat)",
+        "idopont": {
+          "nap": "kedd",
+          "tol": 14,
+          "ig": 16
+        },
+        "helyszin": "A/1. 201.",
+        "oktato": "dr. Karácsony Zsolt",
+        "szak": "Programtervező informatikus BSc"
+      },
+      {
+        "targy": "Algoritmusok és vizsgálatuk (Gyakorlat)",
+        "idopont": {
+          "nap": "kedd",
+          "tol": 16,
+          "ig": 18
+        },
+        "helyszin": "XXX. ea.",
+        "oktato": "Dr. Házy Attila",
+        "szak": "Programtervező informatikus BSc"
+      },
+      {
+        "targy": "Diszkrét matematika I. (Elmélet)",
+        "idopont": {
+          "nap": "szerda",
+          "tol": 10,
+          "ig": 12
+        },
+        "helyszin": "XXXVII. ea.",
+        "oktato": "Dr. Veres Laura",
+        "szak": "Programtervező informatikus BSc"
+      },
+      {
+        "targy": "Web technológiák 1. (Gyakorlat)",
+        "idopont": {
+          "nap": "szerda",
+          "tol": 10,
+          "ig": 12
+        },
+        "helyszin": "In/101",
+        "oktato": "Dr. Bednarik László",
+        "szak": "Programtervező informatikus BSc"
+      },
+      {
+        "targy": "Vállalati információs rendszerek fejlesztése (Elmélet)",
+        "idopont": {
+          "nap": "szerda",
+          "tol": 14,
+          "ig": 16
+        },
+        "helyszin": "In/103",
+        "oktato": "Dr. Sasvári Péter László",
+        "szak": "Programtervező informatikus BSc"
+      },
+      {
+        "targy": "Vállalati információs rendszerek fejlesztése (Gyakorlat)",
+        "idopont": {
+          "nap": "szerda",
+          "tol": 18,
+          "ig": 20
+        },
+        "helyszin": "In/103",
+        "oktato": "Dr. Sasvári Péter László",
+        "szak": "Programtervező informatikus BSc"
+      },
+      {
+        "targy": "Programtervezési ismeretek (Gyakorlat)",
+        "idopont": {
+          "nap": "csütörtök",
+          "tol": 10,
+          "ig": 12
+        },
+        "helyszin": "A/1. 315.",
+        "oktato": "Piller Imre",
+        "szak": "Programtervező informatikus BSc"
+      },
+      {
+        "targy": "Diszkrét matematika I. (Gyakorlat)",
+        "idopont": {
+          "nap": "csütörtök",
+          "tol": 14,
+          "ig": 16
+        },
+        "helyszin": "A/1. 320.",
+        "oktato": "Dr. Radeleczki Sándor Lajos",
+        "szak": "Programtervező informatikus BSc"
+      }
+    ]
+  }
+}

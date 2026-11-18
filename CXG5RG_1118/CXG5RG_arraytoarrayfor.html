@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Tömbökön belüli tömbök ciklusa</title>
+</head>
+<body>
+<h2>Tömbökön belüli tömbök ciklusa</h2>
+<h3 id="nev"></h3>
+<div id="autok"></div>
+
+<script>
+    var PGObj = {
+        "name": "Polonkai Gábor",
+        "age": 23,
+        "cars": [
+            {"name": "Toyota", "models": ["CHR", "Corolla", "Proace"]},
+            {"name": "Ford", "models": ["Kuga", "Mondeo", "Mustang"]},
+            {"name": "BMW", "models": ["320", "X3", "X5"]},
+            {"name": "Fiat", "models": ["500", "Panda", "Tipo"]}
+        ]
+    };
+
+    document.getElementById("nev").innerHTML = PGObj.name + " (" + PGObj.age + ")";
+
+    var szoveg = "";
+    for (var i = 0; i < PGObj.cars.length; i++) {
+        szoveg += "<b>" + PGObj.cars[i].name + ":</b><ul>";
+        for (var j = 0; j < PGObj.cars[i].models.length; j++) {
+            szoveg += "<li>" + PGObj.cars[i].models[j] + "</li>";
+        }
+        szoveg += "</ul>";
+    }
+
+    document.getElementById("autok").innerHTML = szoveg;
+</script>
+</body>
+</html>
